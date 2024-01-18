@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button{
+    border: none;
+}
+body{
+    background-color: tomato;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.btn{
+    color: darkred;
+    background-color: salmon;
+    border-radius: 15px;
+    font-size: 50px;
+    padding: 5px 15px;
+    transition: all 0.5s;
+    border: 5px solid rgb(215, 62, 62);
+}
+.btn:hover{
+    color: salmon;
+    background-color: darkred;
+}
+.title{
+    color: darkred;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    margin: 15px 0;
+}
+.block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.none{
+    display: none;
+}
