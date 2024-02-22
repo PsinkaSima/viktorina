@@ -10,34 +10,68 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
       rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.15.2/css/all.css"
     />
     <title>Document</title>
     <style>
       body {
-        height: 500px;
-        font-family: 'Merriweather', serif;
+        height: 100vh;
+        font-family: "Merriweather", serif;
+      }
+      input{
+        min-width: 400px;
+      }
+      .pop-disable{
+         top: -100% !important;
+
+      }
+      .pop{
+        transition: all 1s;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     </style>
   </head>
-  <body
-    class="text-center bg-info-subtle d-flex flex-column justify-content-center align-items-center"
-  >
-    <button class="btn btn-outline-info">Начать</button>
-    <h1 class="my-4 text-info d-none">Решено 2 из 5</h1>
-    <div class="d-none">
-      <h2 class="my-4 text-info">Вопрос 1</h2>
-      <nav>
-        <button class="btn btn-outline-info">10</button>
-        <button class="mx-1 btn btn-outline-info">2</button>
-        <button class="btn btn-outline-info">3</button>
-        <button class="mx-1 btn btn-outline-info">4</button>
-        <button class="btn btn-outline-info">5</button>
+  <body class="bg-secondary d-flex justify-content-center align-items-center">
+    <button type="button" class="btn btn-outline-info" id="active">
+      <i class="fal fa-sign-in-alt"></i>
+      <span>Авторизация</span>
+    </button>
+    <div class="bg-warning p-5  rounded-5 position-absolute pop-disable pop" id="pop">
+      <p class="fs-3">Ввести логин:</p>
+      <input type="text" class="form-control" placeholder="Username" />
+      <p class="mt-2 fs-3">Ввести пароль:</p>
+      <input type="password" class="form-control" placeholder="Password" />
+      <nav class="mt-3 d-flex justify-content-between">
+        <button type="button" class="btn btn-info">
+          <i class="fal fa-key"></i>
+          <span>Зарегестрироваться</span>
+        </button>
+        <button type="button" class="btn btn-danger" id="popDisable">
+          <i class="fal fa-sign-out"></i>
+          <span>Назад</span>
+        </button>
       </nav>
     </div>
   </body>
+  <script>
+    let pop = document.getElementById('pop')
+    let popDisable = document.getElementById('popDisable')
+    let active = document.getElementById('active')
+
+    active.addEventListener('click', popActive)
+    function popActive(){
+    
+      pop.classList.remove('pop-disable');
+    }
+
+    popDisable.addEventListener('click', popD)
+    function popD(){
+    
+      pop.classList.add('pop-disable');
+    }
+  </script>
 </html>
